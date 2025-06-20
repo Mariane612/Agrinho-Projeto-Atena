@@ -33,7 +33,7 @@ além do colégio.
 * Irá falar quem somos, de onde somos e quem contribui para a realização deste Projeto.
 
 **Contato (Footer):**
-* informações como:
+* Informações como:
 * Link do GitHub do autor
-* colégio/cidade
+* Cidade
 * entre outros
