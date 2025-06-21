@@ -10,7 +10,7 @@ além do colégio.
 **Tecnologias Utilizadas:**
 * Arquivos:
 * index.html: Arquivo principal com a estrutura da página.
-* styles.css: Arquivo de estilos para formatação da página.
+* style.css: Arquivo de estilos para formatação da página.
 
 ### Descrição das Seções:
 
