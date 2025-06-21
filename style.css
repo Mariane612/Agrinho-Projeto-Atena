@@ -1,0 +1,708 @@
+:root {
+  /* Variáveis CSS para facilitar a manutenção */
+  --cor-primaria: #0c2a6e;
+  --cor-secundaria: #2563eb;
+  --cor-destaque: #3b82f6;
+  --cor-texto: #1e293b;
+  --cor-fundo: #f8fafc;
+  --cor-branco: #ffffff;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --borda-redonda: 10px;
+  --transicao: all 0.3s ease;
+}
+
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+  box-sizing: border-box; /* Garante que padding e border não afetem o tamanho total */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte padrão */
+  line-height: 1.6; /* Define o espaçamento entre linhas */
+  color: var(--cor-texto); /* Define a cor do texto */
+  background-color: var(--cor-fundo); /* Define a cor de fundo */
+  transition: var(--transicao); /* Adiciona transição suave */
+}
+
+/* CABEÇALHO DINÂMICO */
+header {
+  background: linear-gradient(135deg, var(--cor-primaria), #1e3a8a);
+  color: var(--cor-branco); /* Cor do texto */
+  padding: 1.5rem 2rem; /* Espaçamento interno */
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Espaçamento entre itens */
+  align-items: center; /* Alinhamento vertical */
+  box-shadow: var(--sombra); /* Sombra para efeito de elevação */
+  position: sticky; /* Fixa o cabeçalho no topo */
+  top: 0; /* Define a posição fixa no topo */
+  z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+.logo-container {
+  /* Estilização do logo/título */
+  transition: transform 0.3s ease; /* Transição suave para efeito de hover */
+}
+
+.logo-container:hover {
+  /* Efeito de hover no logo */
+  transform: translateY(-3px); /* Movimento suave para cima */
+}
+
+header h1 {
+  /* Estilização do título */
+  margin: 0; /* Remove margem padrão */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #e2e8f0
+  ); /* Gradiente de fundo no texto */
+  -webkit-background-clip: text; /* Aplica o gradiente apenas no texto */
+  -webkit-text-fill-color: transparent; /* Torna o texto transparente */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+header p {
+  /* Estilização do subtítulo */
+  margin: 0.3rem 0 0 0; /* Margem superior */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  opacity: 0.9; /* Opacidade reduzida */
+}
+
+nav {
+  /* Estilização do menu de navegação */
+  display: flex; /* Layout flexível */
+  gap: 1.5rem; /* Espaçamento entre itens */
+}
+
+nav a {
+  /* Estilização dos links do menu */
+  color: var(--cor-branco); /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado padrão */
+  font-weight: 500; /* Peso da fonte */
+  padding: 0.5rem 0; /* Espaçamento interno */
+  position: relative; /* Posicionamento relativo para pseudo-elemento */
+  transition: var(--transicao); /* Transição suave */
+}
+
+nav a::after {
+  /* Pseudo-elemento para efeito de hover */
+  content: ""; /* Conteúdo vazio */
+  position: absolute; /* Posicionamento absoluto */
+  bottom: 0; /* Posição inicial */
+  left: 0; /* Posição inicial */
+  width: 0; /* Largura inicial */
+  height: 2px; /* Altura */
+  background-color: var(--cor-branco); /* Cor de fundo */
+  transition: var(--transicao); /* Transição suave */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* === NOVOS ESTILOS PARA O LOGO === */
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Empilha a imagem e o título verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  gap: 0 rem; /* Espaço entre a logo e o título (ajuste conforme necessário) */
+  transition: var(--transicao); /* Mantém a transição original */
+}
+
+.logo-image {
+  width: 85px; /* Tamanho da logo (ajuste conforme sua imagem) */
+  height: auto; /* Mantém a proporção */
+  filter: brightness(0) invert(1); /* Transforma a logo em branco (para combinar com o gradiente do header) */
+}
+
+/* === AJUSTES PARA O TÍTULO "Atena" === */
+.logo-container h1 {
+  margin: 0; /* Remove margens padrão */
+  font-size: 1 rem; /* Mantém o tamanho original */
+  background: linear-gradient(to right, #ffffff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+/* HERO SECTION IMPACTANTE */
+.hero {
+  /* Estilização da seção hero */
+  background: linear-gradient(rgba(12, 42, 110, 0.9), rgba(12, 42, 110, 0.7)),
+    url("");
+  background-size: cover; /* Tamanho de cobertura */
+  background-position: center; /* Posição centralizada */
+  color: var(--cor-branco); /* Cor do texto */
+  padding: 6rem 2rem; /* Espaçamento interno */
+  text-align: center; /* Alinhamento centralizado */
+  animation: fadeIn 1s ease-out; /* Animação de entrada */
+}
+
+.hero h2 {
+  /* Estilização do título da seção hero */
+  font-size: 2.5rem; /* Tamanho da fonte */
+  margin-bottom: 1.5rem; /* Margem inferior */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+}
+
+.hero p {
+  /* Estilização do texto descritivo */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  max-width: 700px; /* Largura máxima */
+  margin: 0 auto; /* Centralização horizontal */
+  opacity: 0.9; /* Opacidade reduzida */
+}
+
+/* SEÇÃO COMO FUNCIONA */
+.guia {
+  /* Estilização da seção de guia */
+  padding: 4rem 2rem; /* Espaçamento interno */
+  max-width: 800px; /* Largura máxima */
+  margin: 0 auto; /* Centralização horizontal */
+  text-align: center; /* Alinhamento centralizado */
+}
+
+.guia h2 {
+  /* Estilização do título da seção */
+  font-size: 2rem; /* Tamanho da fonte */
+  margin-bottom: 3rem; /* Margem inferior */
+  color: var(--cor-primaria); /* Cor do texto */
+  position: relative; /* Posicionamento relativo para pseudo-elemento */
+}
+
+.guia h2::after {
+  /* Pseudo-elemento para linha de destaque */
+  content: ""; /* Conteúdo vazio */
+  position: absolute; /* Posicionamento absoluto */
+  bottom: -10px; /* Posição inferior */
+  left: 50%; /* Posição centralizada */
+  transform: translateX(-50%); /* Centralização horizontal */
+  width: 100px; /* Largura */
+  height: 3px; /* Altura */
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-destaque)
+  ); /* Gradiente de fundo */
+  border-radius: 3px; /* Borda arredondada */
+}
+
+.passo {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 2rem;
+  background: var(--cor-branco);
+  padding: 1.5rem;
+  border-radius: var(--borda-redonda);
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.passo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.passo-numero {
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
+  color: var(--cor-branco);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.passo h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+/* SEÇÃO SOBRE */
+.sobre {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--cor-branco);
+  border-radius: var(--borda-redonda);
+  box-shadow: var(--sombra);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.sobre h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--cor-primaria);
+  position: relative;
+}
+
+.sobre h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-destaque)
+  );
+  border-radius: 3px;
+}
+
+.sobre p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* SEÇÃO DE PROFISSÕES INTERATIVA */
+.profissoes {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.profissoes p {
+  text-align: center;
+}
+
+.profissoes h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--cor-primaria);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profissoes h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-destaque)
+  );
+  border-radius: 3px;
+}
+
+.profissao {
+  margin-bottom: 1.5rem;
+  background-color: var(--cor-branco);
+  border-radius: var(--borda-redonda);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.profissao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profissao label {
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
+  color: var(--cor-branco);
+  padding: 1.2rem 1.5rem;
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transicao);
+  position: relative;
+}
+
+.profissao label:hover {
+  background: linear-gradient(
+    to right,
+    var(--cor-secundaria),
+    var(--cor-destaque)
+  );
+  padding-left: 1.8rem;
+}
+
+.profissao label::after {
+  content: "+";
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  transition: var(--transicao);
+}
+
+.profissao input[type="checkbox"]:checked + label::after {
+  content: "-";
+  transform: rotate(180deg);
+}
+
+.profissao input[type="checkbox"] {
+  display: none;
+}
+
+.videos {
+  display: none;
+  padding: 1.5rem;
+  background-color: var(--cor-branco);
+  animation: slideDown 0.5s ease-out;
+}
+
+.profissao input:checked ~ .videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* FOOTER COMPLETO */
+footer {
+  background: linear-gradient(135deg, var(--cor-primaria), #1e3a8a);
+  color: var(--cor-branco);
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.footer-section {
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: var(--cor-destaque);
+  transition: var(--transicao);
+}
+
+.footer-section:hover h4::after {
+  width: 70%;
+}
+
+.footer-section p {
+  margin: 0.7rem 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-section a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  transition: var(--transicao);
+  display: inline-block;
+  margin: 0 0.3rem;
+}
+
+.footer-section a:hover {
+  color: var(--cor-destaque);
+  transform: translateY(-2px);
+}
+
+/* BOTÃO FLUTUANTE  */
+.floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: var(--cor-destaque);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  z-index: 99;
+  transition: var(--transicao);
+  animation: pulse 2s infinite;
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: var(--cor-secundaria);
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 1.5rem;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+    padding: 1.5rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* RESPONSIVIDADE AVANÇADA */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  nav {
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .guia,
+  .sobre {
+    padding: 2.5rem 1rem;
+  }
+
+  .guia h2,
+  .sobre h2 {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .passo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .passo-numero {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .profissoes {
+    padding: 2.5rem 1rem;
+  }
+
+  .profissoes h3 {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-section h4::after {
+    left: 25%;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  /* ============= NOVOS ESTILOS PARA VÍDEO + TEXTO ============= */
+
+  /* Container principal que agrupa vídeo e texto */
+  .video-container {
+    display: flex; /* Layout flexível lado a lado */
+    gap: 1.5rem; /* Espaço entre vídeo e texto */
+    margin-bottom: 1.5rem; /* Espaço abaixo do container */
+    align-items: flex-start; /* Alinha os itens no topo */
+  }
+
+  /* Estilo do iframe (mantém os existentes e adiciona ajustes) */
+  .video-container iframe {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    min-width: 300px; /* Largura mínima do vídeo */
+  }
+
+  /* Container do texto descritivo */
+  .video-descricao {
+    flex: 1; /* Ocupa 1 parte do espaço (igual ao vídeo) */
+    background: var(--cor-fundo); /* Usa a cor de fundo do tema */
+    padding: 1.2rem; /* Espaçamento interno */
+    border-radius: var(--borda-redonda); /* Borda arredondada do tema */
+    box-shadow: var(--sombra); /* Sombra sutil */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
+  }
+
+  .video-descricao h4 {
+    color: var(--cor-primaria); /* Cor do título usando a variável */
+    margin-bottom: 0.8rem; /* Espaço abaixo do título */
+    font-size: 1.2rem; /* Tamanho aumentado */
+  }
+
+  .video-descricao p {
+    margin-bottom: 0.8rem; /* Espaço entre parágrafos */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    color: var(--cor-texto); /* Cor do texto usando a variável */
+  }
+
+  .video-descricao ul {
+    padding-left: 1.2rem; /* Recuo da lista */
+    margin-top: 0.8rem; /* Espaço acima da lista */
+    color: var(--cor-texto); /* Cor do texto usando a variável */
+  }
+
+  .video-descricao li {
+    margin-bottom: 0.4rem; /* Espaço entre itens da lista */
+  }
+
+  /* Ajuste para o grid existente quando expandido */
+  .profissao input:checked ~ .videos {
+    display: grid;
+    grid-template-columns: 1fr; /* Agora só 1 coluna (container flex cuida do resto) */
+    gap: 1.5rem;
+  }
+
+  /* ============= RESPONSIVIDADE ============= */
+
+  @media (max-width: 900px) {
+    .video-container {
+      flex-direction: column; /* Empilha vídeo e texto */
+    }
+
+    .video-container iframe {
+      width: 100%; /* Largura total */
+      min-width: auto; /* Remove a largura mínima */
+      margin-bottom: 1rem; /* Espaço entre vídeo e texto */
+    }
+  }
+
+  /* Mantém a responsividade original para telas menores */
+  @media (max-width: 768px) {
+    /* ... (seus estilos existentes permanecem) ... */
+  }
+  /* ============= ESTILOS PARA VÍDEO + TEXTO ============= */
+
+  .video-container {
+    display: flex; /* Ativa o layout flexível */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 1.5rem; /* Espaço entre elementos */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Vídeo ocupa 100% em mobile e metade em desktop */
+  .video-container iframe {
+    flex: 1 1 100%; /* Padrão: ocupa 100% (mobile) */
+    min-width: 300px; /* Largura mínima */
+  }
+
+  /* Texto ocupa 100% em mobile e metade em desktop */
+  .video-descricao {
+    flex: 1 1 100%; /* Padrão: ocupa 100% (mobile) */
+    background: var(--cor-fundo);
+    padding: 1.2rem;
+    border-radius: var(--borda-redonda);
+    box-shadow: var(--sombra);
+  }
+
+  /* ============= MEDIA QUERIES ============= */
+
+  /* Em telas maiores (acima de 768px) */
+  @media (min-width: 768px) {
+    .video-container iframe {
+      flex: 1 1 50%; /* Ocupa metade do container */
+    }
+
+    .video-descricao {
+      flex: 1 1 45%; /* Ocupa metade do container */
+      align-self: stretch; /* Estica para mesma altura do vídeo */
+    }
+  }
+
+  /* Ajuste fino para telas muito grandes */
+  @media (min-width: 1200px) {
+    .video-container iframe {
+      flex: 1 1 40%; /* Vídeo ocupa 40% */
+    }
+
+    .video-descricao {
+      flex: 1 1 55%; /* Texto ocupa 55% */
+    }
+  }
+    }
+
