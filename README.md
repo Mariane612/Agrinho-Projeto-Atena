@@ -37,3 +37,16 @@ além do colégio.
 * Link do GitHub do autor
 * Cidade
 * entre outros
+
+### ✍️ Conteúdo Autoral
+
+Todo o conteúdo deste site é **100% autoral**:
+
+- 🖼️ **A ilustração do site** foi criada exclusivamente para
+  este projeto, desenhada por mim, sem uso de elementos prontos.
+
+- 📝 **Os textos** foram baseados em pesquisas que realizei sobre
+ cursos e oportunidades em faculdades da região, e escritos de forma original.
+
+- 🎥 **Os vídeos** também são de minha autoria. Todas as pessoas que
+  aparecem autorizaram o uso de sua imagem.
