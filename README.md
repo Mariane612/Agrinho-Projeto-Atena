@@ -32,7 +32,7 @@ além do colégio.
 
 * Irá falar quem somos, de onde somos e quem contribui para a realização deste Projeto.
 
-**Contato (Footer):**
+**Contato (Footer):**l
 * Informações como:
 * Link do GitHub do autor
 * Cidade
@@ -43,7 +43,7 @@ além do colégio.
 Todo o conteúdo deste site é **100% autoral**:
 
 - **A ilustração do site** foi criada exclusivamente para
-  este projeto, desenhada por mim, sem uso de elementos prontos.
+  este projeto, desenhada por mim.
 
 -  **Os textos** foram baseados em pesquisas que realizei sobre
  cursos e oportunidades em faculdades da região, e escritos de forma original.
